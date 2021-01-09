@@ -44,5 +44,22 @@ package OOP;
  */
 
 public class OOP_Modifiers {
-
+	
+	//Static method
+	static void myStaticMethod() {
+		System.out.println("This method can be called without creating an object");
+	}
+	
+	//Public method
+	public void myPublicMethod() {
+		System.out.println("This method must be called from an object");
+	}
+	
+	public static void main(String [] args) {
+		myStaticMethod();	//Called without an object
+		
+		OOP_Modifiers myObj = new OOP_Modifiers();
+		myObj.myPublicMethod();		//Called from an object
+	}
+	
 }
