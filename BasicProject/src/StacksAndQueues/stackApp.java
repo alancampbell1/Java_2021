@@ -1,4 +1,4 @@
-package OOP;
+package StacksAndQueues;
 
 /**
  * 
@@ -205,8 +205,3 @@ public class stackApp {
 		}
 	}
 }
-
-
-
-
-
