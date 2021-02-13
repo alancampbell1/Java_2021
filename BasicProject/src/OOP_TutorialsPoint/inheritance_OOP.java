@@ -226,12 +226,84 @@ class Dogs extends Mammals {
 
 /**
  * HAS-A Relationship:
- *
+ * This relationship is based around whether a certain class HAS-A certain thing.
+ * 
+ * In the following example, we have a Van class that has an object of type Speed. By separating Speed into its own
+ * class, we do not need to keep typing out the contents of Speed into each class that needs it. Thus reducing duplication.
+ * In OOP, we do not need to worry about which object is doing the work. In the Van example, we hide the implementation
+ * details from the user. The user just calls on the methods it needs by creating a Van object and Van will either
+ * call on classes such as Speed or carry out the task themselves.
  */
+class vehicle {}
+class Speed{}
+
+class Van extends vehicle{
+	private Speed ob;		//Van know HAS-A Relationship to Speed without extending it
+}
 
 /**
  * Interfaces and Inheritance:
  * 
+ * An interface is a reference type in Java.
+ * 
+ * Interfaces can have the following:
+ * - abstract methods with no body
+ * - default methods with no body
+ * - static methods with body
+ * 
+ * Variables can only be declared as final, static or final static
+ * 
+ * Important notes on Interfaces:
+ * - You cannot instantiate an object from an interface
+ * - Interfaces contain no constructor
+ * - All methods in an interface are abstract (i.e. no body), unless marked as static
+ * - Interfaces are implemented from a class
+ * - A class can implement multiple interfaces
+ * - An interface can implement multiple interfaces
+ * - When a class implements an interface, it must give all abstract methods a body
+ * 
  */
+
+interface myInterface {
+	
+	final  int y = 6;
+	static int z = 5;
+	static final int w = 9;
+	
+	public static void myStaticMethod() {
+		
+		int x = 5;
+		System.out.println("My Static Method: " + x);
+		
+	}
+	
+	public abstract void myAbMethod();
+	
+	public void defaultMethod();
+	
+}
+
+interface myInterface2 {
+	
+	public void defaultMethod2();
+	
+}
+
+class usingInterfaces implements myInterface, myInterface2 {
+	
+	public void myAbMethod() {
+		System.out.println("Giving myAbMethod a body in the class usingInterfaces.");
+	}
+	
+	public void defaultMethod() {
+		System.out.println("Giving defaultMethod a body in the class usingInterfaces.");
+	}
+	
+	public void defaultMethod2() {
+		System.out.println("Giving defaultMethod2 a body in the class usingInterfaces.");
+	}
+	
+	
+}
 
 
